@@ -1,0 +1,29 @@
+<div
+  class="d-flex gap-3 px-3 align-items-center w-100 main-header-navbar justify-content-between align-items-center"
+>
+  <ng-container *ngIf="!authService.checkIslogedIn(); else loggedOut">
+    <div class="d-flex align-items-center gap-2">
+      <a [routerLink]="['/signup']">signup</a>
+      <a [routerLink]="['/signin']">signin</a>
+    </div>
+  </ng-container>
+  <ng-template #loggedOut>
+    <div class="d-flex align-items-center gap-2">
+      <div>welcome</div>
+      <a [routerLink]="['/dashboard/home']">dashboard</a>
+      <div (click)="authService.loggingOut()">logout</div>
+    </div>
+  </ng-template>
+  <div class="d-flex align-items-center">
+    <ul class="d-flex align-items-center gap-4">
+      <li>
+        <a [routerLink]="['/']">home</a>
+      </li>
+      <li>aboutus</li>
+      <li>
+        <a [routerLink]="['/contact-us']">contact-us</a>
+      </li>
+    </ul>
+  </div>
+  <div>FARID SHOP</div>
+</div>

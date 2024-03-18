@@ -1,0 +1,24 @@
+<div class="d-block">
+  <div>controller header search</div>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th
+          scope="col"
+          class="all sorting sorting_asc"
+          *ngFor="let item of theaderItems"
+        >
+          {{ item.label }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dataItem of tableData">
+        <td *ngFor="let colItem of theaderItems">
+          {{ dataItem[colItem.value] }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div>footer</div>
+</div>

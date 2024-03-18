@@ -1,0 +1,25 @@
+<h1>contact-us</h1>
+<ng-container *ngIf="!submited; else preview">
+  <form>
+    <div class="d-flex flex-column">
+      <label for="email">email</label>
+      <input type="email" id="email" name="email" [(ngModel)]="email" />
+    </div>
+    <div class="d-flex flex-column">
+      <label>phone</label>
+      <input type="text" name="phone" id="phone" [(ngModel)]="phone" />
+    </div>
+    <div class="d-flex flex-column">
+      <label for="message">message</label>
+      <textarea id="message" name="message" [(ngModel)]="message"></textarea>
+    </div>
+    <button type="submit" (click)="sendingMSG()">send</button>
+  </form>
+</ng-container>
+<ng-template #preview>
+  <div>
+    <p>email :{{ email }}</p>
+    <p>address :{{ phone }}</p>
+    <p>message : {{ message }}</p>
+  </div>
+</ng-template>
